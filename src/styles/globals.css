@@ -98,6 +98,10 @@ h2 { font-family: 'Rubik', Arial, sans-serif; font-size: 30px; line-height: 1.4;
 .board-footnote { font-size: 11px; text-align: center; color: var(--muted); margin: 24px auto 0; line-height: 1.8; }
 .milestone { text-align: center; margin: 24px auto 0; font-weight: 600; color: var(--dark); font-size: 18px; }
 .milestone > span { color: #967117; padding-inline-end: 8px; }
+.day-fact { max-width: 680px; margin: 25px auto 0; padding: 17px 20px; display: flex; align-items: center; gap: 18px; background: #eee7cd; border: 1px solid #d8c998; border-radius: 3px; color: var(--dark); transform: rotate(-.35deg); box-shadow: 3px 3px 0 #d8c99855; }
+.day-fact__number { width: 49px; height: 49px; flex: 0 0 49px; display: flex; align-items: center; justify-content: center; gap: 1px; border: 1px solid #9b8547; border-radius: 50%; color: #79601f; font-family: 'Rubik', Arial, sans-serif; font-size: 17px; font-weight: 800; transform: rotate(5deg); }
+.day-fact__label { display: flex; align-items: center; gap: 6px; color: #7b6423; font-size: 11px; font-weight: 700; letter-spacing: .3px; }
+.day-fact p { margin-top: 4px; font-size: 13px; line-height: 1.65; color: #575546; }
 .story { margin: 18px 0 70px; background: #e9e7d8; display: grid; grid-template-columns: .85fr 1.2fr; gap: 68px; padding: 49px 62px; border: 1px solid #dddcc8; position: relative; align-items: center; }
 .story__photo { position: relative; padding-bottom: 15px; }
 .photo--civilian { transform: rotate(4deg); max-width: 285px; margin-inline: auto; }
@@ -162,6 +166,9 @@ footer > span:last-child { display: flex; align-items: center; gap: 5px; }
   .board__legend > span { gap: 5px; }
   .board__progress { margin-top: 15px; padding-top: 12px; }
   .board-footnote { font-size: 10px; padding-inline: 12px; }
+  .day-fact { margin-top: 20px; padding: 14px 13px; gap: 12px; transform: none; }
+  .day-fact__number { width: 43px; height: 43px; flex-basis: 43px; font-size: 15px; }
+  .day-fact p { font-size: 12px; line-height: 1.55; }
   .story { grid-template-columns: 1fr; padding: 31px 24px 35px; gap: 35px; margin: 15px 0 37px; }
   .story__copy { grid-row: 1; }
   .story h2 { font-size: 32px; }

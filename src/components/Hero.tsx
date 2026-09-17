@@ -2,6 +2,7 @@ import { ArrowDown, MapPin, Star } from 'lucide-react';
 import type { SiteConfig } from '../config/siteConfig';
 import { Photo } from './Photo';
 import { Countdown } from './Countdown';
+import { ShareCountdown } from './ShareCountdown';
 import { formatReleaseDate } from '../utils/date';
 
 export function Hero({ config, daysRemaining, error }: {
@@ -14,6 +15,7 @@ export function Hero({ config, daysRemaining, error }: {
         <h1 id="hero-title" aria-label={config.headline}><span>100 ימים לשחרור</span><span className="hero__subtitle"> — כי גם לסדרות חינוך<br className="desktop-break" /> יש <em>סוף טוב</em></span></h1>
         <p className="hero__intro">{config.person.name}, את כל הדרך הזאת כבר עשית.<br />עכשיו נשאר רק לספור את הימים לפרק הבא.</p>
         <Countdown daysRemaining={daysRemaining} name={config.person.name} error={error} />
+        <ShareCountdown name={config.person.name} daysRemaining={daysRemaining} />
         <div className="hero__meta"><span><Star size={15} aria-hidden="true" /> חיל החינוך והנוער</span>
           <span><MapPin size={15} aria-hidden="true" /> ירושלים והסביבה</span></div>
         {config.releaseDate && !error && <p className="release-date">נפגשים באזרחות: <time dateTime={config.releaseDate}>{formatReleaseDate(config.releaseDate, config.timezone)}</time></p>}

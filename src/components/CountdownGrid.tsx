@@ -1,6 +1,7 @@
 import { Check, Flag } from 'lucide-react';
 import { countdownValues, getCellState, getCompletedDays } from '../utils/countdown';
 import { milestones } from '../data/milestones';
+import { DayFact } from './DayFact';
 
 export function CountdownGrid({ daysRemaining }: { daysRemaining: number | null }) {
   const completed = getCompletedDays(daysRemaining);
@@ -22,6 +23,7 @@ export function CountdownGrid({ daysRemaining }: { daysRemaining: number | null 
         <div className="board__progress"><div role="progressbar" aria-label="התקדמות במאה הימים האחרונים" aria-valuemin={0} aria-valuemax={100} aria-valuenow={completed} aria-valuetext={daysRemaining === null ? 'ממתינים לתאריך השחרור' : `${completed} מתוך 100 ימים`}><span style={{ width: `${completed}%` }} /></div><Check size={17} aria-hidden="true" /></div>
       </div>
       {milestone && <p className="milestone" role="note"><span aria-hidden="true">✦</span> {milestone}</p>}
+      <DayFact daysRemaining={daysRemaining} />
       <p className="board-footnote">הלוח מתעדכן אוטומטית בכל יום, לפי שעון ישראל. את רק צריכה להגיע לחופש.</p>
     </section>
   );

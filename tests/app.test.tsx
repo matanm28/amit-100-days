@@ -35,6 +35,14 @@ describe('rendered countdown', () => {
     rerender(<CountdownGrid daysRemaining={49} />);
     expect(screen.queryByRole('note')).not.toBeInTheDocument();
   });
+  it('shows a number-specific anecdote for special days and a daily fallback otherwise', () => {
+    const { rerender } = render(<CountdownGrid daysRemaining={42} />);
+    expect(screen.getByLabelText('האנקדוטה של יום 42')).toHaveTextContent('התשובה לחיים, ליקום ולהכול');
+    rerender(<CountdownGrid daysRemaining={41} />);
+    expect(screen.getByLabelText('האנקדוטה של יום 41')).toHaveTextContent('מספר הפעמים שמותר להגיד היום');
+    rerender(<CountdownGrid daysRemaining={0} />);
+    expect(screen.queryByLabelText(/האנקדוטה של יום/)).not.toBeInTheDocument();
+  });
   it('shows a truthful unconfigured state and explicit photo placeholders', () => {
     render(<App config={{ ...siteConfig, releaseDate: null, images: { uniform: null, civilian: null } }} />);
     expect(screen.getByRole('status')).toHaveTextContent('בקרוב מתחילים לספור');
